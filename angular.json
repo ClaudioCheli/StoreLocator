@@ -25,6 +25,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/assets/Stores.json",
               {
                 "glob": "**/*",
                 "input": "node_modules/leaflet/dist/images/",
