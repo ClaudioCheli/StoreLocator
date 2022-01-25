@@ -54,7 +54,6 @@ export class MapComponent implements AfterViewInit {
     });
     this.initStoreService();
     this.initPositionService();
-    this.positionService.geolocate();
   }
 
   private initStoreService() {
