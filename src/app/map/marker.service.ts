@@ -14,7 +14,7 @@ export class MarkerService {
   constructor() { 
     const defaultIconOpt = L.Icon.Default.prototype.options;
     const iconOpt: L.IconOptions = {
-      iconUrl: '/assets/map-pin.png',
+      iconUrl: 'assets/map-pin.png',
       iconSize: defaultIconOpt.iconSize,
       iconAnchor: defaultIconOpt.iconAnchor,
       popupAnchor: defaultIconOpt.popupAnchor,

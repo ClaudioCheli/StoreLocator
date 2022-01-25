@@ -9,7 +9,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class StoreService {
 
-  private storeDB: string = "/assets/Stores.json";
+  private storeDB: string = "assets/Stores.json";
   private stores: Store[] = [];
   private nearStores: Subject<Store[]> = new Subject<Store[]>();
   private radius = 0.5;
