@@ -1,0 +1,21 @@
+.pageContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.menuContainer {
+    height: 100%;
+    box-shadow:0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mapContainer {
+    height: 100%;
+    flex-grow: 1;
+    position: relative;
+}

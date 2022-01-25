@@ -1,0 +1,29 @@
+.citySearch {
+    margin: 20px;
+}
+
+.citySearchForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.citySearchInput {
+    margin-top: 5px;
+    height: 20px;
+    width: 142px;
+}
+
+.citySearchButton {
+    height: 30px;
+    width: 150px;
+    margin-top: 10px;
+}
+
+.findNear {
+    margin: 20px;
+}
+
+.findNearbyButton {
+    height: 30px;
+    width: 150px;
+}

@@ -1,0 +1,18 @@
+<div class="citySearch">
+    <form class="citySearchForm" #cityForm="ngForm" (ngSubmit)="search(cityName.value)">
+        <label for="city">Search Address</label>
+        <input type="text" id="city" class="citySearchInput" name="city" ngModel required #cityName>
+        <div class="error" *ngIf="!cityForm.form.valid && cityForm.submitted">
+            City is required
+        </div>
+        <button id="searchButton" class="citySearchButton" type="submit" >
+            Search
+        </button>
+    </form>
+</div>
+<hr>
+<div class="findNear">
+    <button id="findButton" class="findNearbyButton" (click)="find()">
+        Find nearby
+    </button>
+</div>
