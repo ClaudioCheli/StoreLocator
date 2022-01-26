@@ -11,7 +11,7 @@ export class MarkerService {
   private positionMarker: L.Marker | undefined;
   private positionIcon: L.Icon;
 
-  constructor() { 
+  constructor() {
     const defaultIconOpt = L.Icon.Default.prototype.options;
     const iconOpt: L.IconOptions = {
       iconUrl: 'assets/map-pin.png',
@@ -25,8 +25,11 @@ export class MarkerService {
     this.positionIcon = L.icon(iconOpt);
   }
 
-  addMarker(latlng: LatLng, map: L.Map): void {
+  addMarker(latlng: LatLng, map: L.Map, popupData?: string): void {
     const marker = L.marker(latlng);
+    if (popupData) {
+      marker.bindPopup(popupData);
+    }
     marker.addTo(map);
     this.markers.push(marker);
   }

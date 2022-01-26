@@ -48,10 +48,6 @@ export class MapComponent implements AfterViewInit {
     });
     tiles.addTo(this.map);
 
-    this.map.addEventListener("click", (event: L.LeafletMouseEvent) => {
-      this.markerService.addMarker(event.latlng, this.map);
-      console.log(event.latlng);
-    });
     this.initStoreService();
     this.initPositionService();
   }
@@ -62,9 +58,25 @@ export class MapComponent implements AfterViewInit {
       .subscribe((stores: Store[]) => {
         this.markerService.clearMarkers();
         stores.forEach((store: Store) => {
-          this.markerService.addMarker(latLng(store.lat, store.long), this.map);
+          this.markerService.addMarker(
+            latLng(store.lat, store.long),
+            this.map,
+            this.buildTooltip(store)
+          );
         });
       });
+  }
+
+  private buildTooltip(store: Store) {
+    let storeType = "Euronics";
+    if (store.type == "EC") {
+      storeType = "Euronics city";
+    }
+    if (store.type == "EP") {
+      storeType = "Euronics point";
+    }
+    return `<div>Type: ${storeType}</div>` +
+      `<div>Location: ${store.lat} , ${store.long}</div>`;
   }
 
   private initPositionService() {
