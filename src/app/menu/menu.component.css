@@ -27,3 +27,28 @@
     height: 30px;
     width: 150px;
 }
+
+.loader {
+    margin: auto;
+    border: 10px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 10px solid #5c5c5c;
+    width: 50px;
+    height: 50px;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loadingText{
+    margin-top: 10px;
+    text-align: center;
+}

@@ -5,14 +5,21 @@
         <div class="error" *ngIf="!cityForm.form.valid && cityForm.submitted">
             City is required
         </div>
-        <button id="searchButton" class="citySearchButton" type="submit" >
+        <button id="searchButton" class="citySearchButton" type="submit" [disabled]="loading">
             Search
         </button>
     </form>
 </div>
 <hr>
 <div class="findNear">
-    <button id="findButton" class="findNearbyButton" (click)="find()">
+    <button id="findButton" class="findNearbyButton" (click)="find()" [disabled]="loading">
         Find nearby
     </button>
+</div>
+
+<div class="loader" [hidden]="!loading">
+
+</div>
+<div class="loadingText" [hidden]="!loading">
+    Searching...
 </div>
