@@ -1,26 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { LatLng } from 'leaflet';
 import { Store } from './store.model';
 import { Observable, Subject } from 'rxjs';
+import  Stores from '../../assets/Stores.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
 
-  private storeDB: string = "assets/Stores.json";
-  private stores: Store[] = [];
+  private stores: Store[] = Stores;
   private nearStores: Subject<Store[]> = new Subject<Store[]>();
   private radius = 0.5;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   loadStores(): Observable<Store[]> {
-    this.http.get<Store[]>(this.storeDB)
-      .subscribe((storeArray: Store[]) => {
-        this.stores = storeArray;
-      });
     return this.nearStores.asObservable();
   }
 

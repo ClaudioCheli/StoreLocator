@@ -1,8 +1,10 @@
 export class Store {
     constructor(
-        public id: number,
+        public ID: string,
         public lat: number,
         public long: number,
-        public type: string
+        public type: string,
+        public hasFlyers: boolean,
+        public pr?: boolean
     ) { }
 }

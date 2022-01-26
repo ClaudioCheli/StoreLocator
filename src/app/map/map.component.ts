@@ -74,6 +74,7 @@ export class MapComponent implements AfterViewInit {
         this.markerService.deletePosiotionMarker();
         this.markerService.setPositionMarker(position, this.map);
         this.map.flyTo(position);
+        this.storeService.getNearby(position);
       });
   }
 
